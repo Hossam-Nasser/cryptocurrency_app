@@ -1,14 +1,25 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:intro_flutter/map_screen.dart';
+import 'package:intro_flutter/provider/login_provider.dart';
+
+
+import 'package:intro_flutter/view/widget/control_view.dart';
+import 'package:provider/provider.dart';
+
+import 'provider/chat_provider.dart';
 
 
 
 
+void main()async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
 
 
-
-void main() {
-  runApp(MyApp());
+  runApp(MultiProvider(providers: [
+    ChangeNotifierProvider(create: (context) => ChatProvider()),
+    ChangeNotifierProvider(create: (context) => LoginProvider()),
+  ], child: MyApp()));
 }
 
 class MyApp extends StatelessWidget {
@@ -18,7 +29,12 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
-      home: MapSample(),
+      theme: ThemeData(
+        primarySwatch: Colors.teal,
+      ),
+      home: ControlView(),
     );
   }
 }
+
+
