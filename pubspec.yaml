@@ -38,25 +38,32 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
   cloud_firestore: ^3.5.1
-  firebase_auth: ^3.11.2
   firebase_core: ^1.24.0
-  google_sign_in: ^5.4.2
+  provider: ^6.0.3
+  firebase_auth: ^3.11.2
   get: ^4.6.5
-  firebase_storage: ^10.3.11
+  google_sign_in: ^5.4.2
   image_picker: ^0.8.6
-
-
+  firebase_storage: ^10.3.11
+  syncfusion_flutter_charts: ^20.3.50
+  flutter_html: ^2.2.0
+  sliding_clipped_nav_bar: ^3.1.0+3
+  flutter_svg: ^0.23.0+1
+  shared_preferences: ^2.0.8
+  dio: ^4.0.6
+  mocktail: ^0.3.0
 
 
 
 
   google_maps_flutter: ^2.2.1
-  provider: ^6.0.3
-  dio: ^4.0.6
   google_nav_bar: ^5.0.6
   line_icons: ^2.0.1
-  webview_flutter: ^3.0.4
-
+  #webview_flutter: ^3.0.4
+  get_it: ^7.2.0
+  dartz: ^0.10.0
+  internet_connection_checker: 0.0.1+4
+  connectivity_plus: ^3.0.0
 
 
 dev_dependencies:
@@ -109,6 +116,7 @@ flutter:
      - assets/image-not-found.png
      - assets/News-icon.png
      - assets/google.png
+     - assets/undraw_the_search.svg
 
 
 

@@ -3,10 +3,16 @@ import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get/get.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+import 'package:intro_flutter/main.dart';
+import 'package:intro_flutter/view/screens/auth/login_screen.dart';
+import 'package:intro_flutter/view/widget/control_view.dart';
+import 'package:intro_flutter/view_model/provider/control_provider.dart';
+import 'package:provider/provider.dart';
 
-import '../../models/user_model.dart';
-import '../../view/screens/chat/chat_screen.dart';
-import '../../view/screens/auth/login_screen.dart';
+import '../../../models/user_model.dart';
+import '../../../view/screens/coin/home_screen.dart';
+
+
 
 class AuthProvider extends ChangeNotifier {
   FirebaseAuth _auth = FirebaseAuth.instance;
@@ -29,14 +35,16 @@ class AuthProvider extends ChangeNotifier {
 
     await _auth.signInWithCredential(credential).then((user) {
       saveUser(user, "");
-      Get.offAll(ChatScreen());
+
+      Get.offAll(ControlView());
+
     });
   }
 
-  void signInWithEmailAndPassword(String email, String password) async {
+  void login(String email, String password) async {
     try {
       await _auth.signInWithEmailAndPassword(email: email, password: password);
-      Get.offAll(ChatScreen());
+      Get.offAll(ControlView());
     } catch (e) {
       print(e.toString());
       Get.snackbar(
@@ -48,11 +56,7 @@ class AuthProvider extends ChangeNotifier {
     }
   }
 
-  void createAccountWithEmailAndPassword(
-    String email,
-    String password,
-    String name,
-  ) async {
+  void register(String email, String password, String name) async {
     try {
       await _auth
           .createUserWithEmailAndPassword(
@@ -63,7 +67,7 @@ class AuthProvider extends ChangeNotifier {
         saveUser(user, name);
       });
 
-      Get.offAll(ChatScreen());
+      Get.offAll(ControlView());
     } catch (e) {
       print(e.toString());
       Get.snackbar(
