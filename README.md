@@ -2,11 +2,7 @@
 # cryptocurrency APP
 Complete Flutter Application with Riverpod & Freezed + Dio for API REST.
 
-[![test](https://github.com/salvadordeveloper/flutter-crypto-app/actions/workflows/tests.yml/badge.svg)](https://github.com/salvadordeveloper/flutter-crypto-app/actions/workflows/tests.yml)
-[![build](https://github.com/salvadordeveloper/flutter-crypto-app/actions/workflows/release.yml/badge.svg)](https://github.com/salvadordeveloper/flutter-crypto-app/actions/workflows/release.yml)
-[![codecov](https://codecov.io/gh/salvadordeveloper/flutter-crypto-app/branch/main/graph/badge.svg?token=UYU0OB442S)](https://codecov.io/gh/salvadordeveloper/flutter-crypto-app)
-[![Flutter version](https://img.shields.io/badge/flutter-2.10.2-blue?logo=flutter)](https://flutter.dev/docs/get-started/install)
-[![GitHub license](https://img.shields.io/github/license/chinnonsantos/full_testing_flutter)](https://choosealicense.com/licenses/mit/)
+
 
 <img src="screenshots/cover.png" >
 
